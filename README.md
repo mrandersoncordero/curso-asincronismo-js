@@ -23,3 +23,18 @@
 ## Que es el Event loop?
 
 💬 El Event loop es el encargado de preguntar al Call Stack si ya ha terminado todas sus tareas. Entonces, si y solo si el Call Stack está vacío, el Event loop moverá las funciones que están en el Callback queue para que se ejecuten.
+
+## Function Callback
+Una función de callback es una función que se pasa a otra función como un argumento, que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción.
+
+```js
+function sum(num1, num2){
+    return num1 + num2;
+}
+
+function calc(num1, num2, callback){
+    return callback(num1, num2);
+}
+
+console.log(calc(2, 3, sum));
+```
